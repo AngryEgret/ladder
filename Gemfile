@@ -9,4 +9,5 @@ group :test, :development do
   gem 'rake'
   gem 'rspec'
   gem 'rack-test'
+  gem 'coveralls', require: false
 end
