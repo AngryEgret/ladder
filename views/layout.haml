@@ -1,0 +1,70 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %title Lookout Street Fighter
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %meta{:content => "", :name => "Street Fighter Ladder"}
+    %meta{:content => "", :name => "Ryan Greget"}
+    / styles
+    %link{:href => "/css/bootstrap.min.css", :rel => "stylesheet"}
+    %link{:href => "/css/bootstrap-responsive.min.css", :rel => "stylesheet"}
+    %link{:href => "/css/jquery-ui.css", :rel => "stylesheet"}
+    :css
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    / HTML5 shim, for IE6-8 support of HTML5 elements
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    / Favicon
+    %link{:href => "../assets/ico/favicon.png", :rel => "shortcut icon"}
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container{:style => "width: auto"}
+          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            %span.icon-bar 
+            %span.icon-bar 
+            %span.icon-bar 
+          %a.brand{:href => "/"} Lookout Street Fighter
+          .nav-collapse.collapse
+            %ul.nav.pull-right
+              %li.active
+                - if @current_user
+                  %a{:href => "/log_out"}
+                    = "Logout #{@current_user[:name]}?"
+                - else
+                  %a{:href => "/auth/developer"} Login
+              %li
+                %a{:href => "/about#rules"} Rules
+              %li
+                %a{:href => "/about#contact"} Contact
+          / /.nav-collapse
+    .container
+      =yield
+
+      /
+        Footer
+        \==================================================
+      %hr
+      %footer#footer
+        %p.pull-right
+          %a{:href => "#"} Back to top
+        .links
+          Made by Ryan Greget.
+          Add bugs for twitter, github and six60six
+        %br/
+        Based on
+        %a{:href => "http://twitter.github.com/bootstrap/", :target => "_blank"} Bootstrap
+        \- Theme from
+        %a{:href => "http://bootswatch.com/superhero/", :target => "_blank"} Bootswatch
+        \- Web fonts from
+        %a{:href => "http://www.google.com/webfonts", :target => "_blank"} Google
+    / /container
+    /
+      javascript
+      \==================================================
+    / Placed at the end of the document so the pages load faster
+    %script{:src => "/js/jquery-1.8.3.min.js"}
+    %script{:src => "/js/bootstrap.min.js"}

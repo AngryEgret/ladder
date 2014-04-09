@@ -1,0 +1,65 @@
+- if session[:uid] == @player[:uid]
+  = haml :challenges
+%section#details
+  .page-header
+    %h2= @player[:name].upcase
+  .row-fluid
+    .span12
+    %script{:src => "http://www.google.com/jsapi", :type => "text/javascript"}
+    :javascript
+      google.load('visualization', '1', {packages: ['corechart']});
+      function drawVisualization() {
+        // Create and populate the data table.
+        var data = google.visualization.arrayToDataTable( #{@chart.to_s});
+        // Create and draw the visualization.
+        new google.visualization.LineChart(document.getElementById('chart')).
+          draw(data, {curveType: "function"});
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    #chart
+  .row-fluid
+    .span12
+      %table.table.table-bordered
+        %tr
+          %td
+            Rank:
+            = @player[:rank]
+          %td
+            Rating:
+            = @player[:rating]
+          %td
+            Class:
+            TBD
+%section#history
+  .page-header
+    %h2 History
+  .row-fluid
+    .span12
+      Record:
+      = "#{@player[:wins]}/#{@player[:losses]}/#{@player[:ties]}"
+      %table.table.table-bordered.table-striped
+        %thead
+          %tr
+            %th Date
+            %th Challenger
+            %th Defender
+        %tbody
+          - @history.each do |row|
+            %tr
+              %td
+                = row[:modified]
+              %td
+                - if !row[:winner].nil?
+                  - if row[:challenger_uid] == row[:winner]
+                    %span.label.label-success Winner
+                  - else
+                    %span.label.label-important Loser
+                = row[:challenger_uid]
+              %td
+                - if !row[:winner].nil?
+                  - if row[:defender_uid] == row[:winner]
+                    %span.label.label-success Winner
+                  - else
+                    %span.label.label-important Loser
+                = row[:defender_uid]

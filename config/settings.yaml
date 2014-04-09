@@ -1,0 +1,14 @@
+# Defaults
+---
+pro_rating_boundry:       100
+starter_boundry:          30
+default_rating:           1000
+pro_name:                 Pro
+mid_name:                 Sport
+starter_name:             Beginner
+outbound_challenge_limit: 1
+starter_k_factor:         30
+default_k_factor:         15
+pro_k_factor:             10
+challenge_timeout:        86400 #seconds
+history_limit:            25

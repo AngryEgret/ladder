@@ -1,0 +1,38 @@
+= haml :challenges
+%section#ladder
+  .page-header
+    %h2 Ladder
+  .row-fluid
+    .span12
+      %table.table.table-bordered.table-striped
+        %thead
+          %tr
+            %th Rank
+            %th (icon) Name 
+            %th Win/Loss/Tie
+            %th Rating
+            %th Actions
+        %tbody
+          - @ladder.each do |row|
+            %tr
+              %td
+                = row[:rank]
+              %td
+                = row[:name]
+              %td
+                = "#{row[:wins]}/#{row[:losses]}/#{row[:ties]}"
+              %td
+                = row[:rating]
+              %td
+                .btn-group
+                  - if row[:uid] == session[:uid] || !session[:uid]
+                    %a.btn.btn.disabled{:href => "#"} Challenge
+                  - else
+                    %a.btn.btn{:onclick => "$.post('/challenge/#{row[:uid]}')", :href => '/'} Challenge
+                  %a.btn.btn-inverse.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                    %span.caret
+                  %ul.dropdown-menu
+                    %li
+                      %a{:href => "/player/#{row[:uid]}"} Player Details
+                / /btn-group
+      / /table

@@ -1,0 +1,33 @@
+- if @challenges
+  -if @challenges.count > 0
+    %section#challenges
+      .page-header
+        %h2 Challenges
+      .row-fluid
+        - @challenges.each do |challenge|
+          .span6.well
+            %h4= challenge[:created]
+            %table.table.table-bordered.table-striped
+              %thead
+                %tr
+                  %th Challenger
+                  %th 
+                  %th Defender
+              %tbody
+                %tr
+                  %td= challenge[:challenger_uid]
+                  %td
+                    %span.badge VS
+                  %td= challenge[:defender_uid]
+            %h5 Expires:
+            %span.label.label-warning= (((Ladder.config['challenge_timeout']).to_i - (Time.now - challenge[:created]).to_i)/60).round
+            min
+            %form.form-search.pull-right{:id => challenge[:id], :action => "/challenge/resolve/#{challenge[:id]}", :method => "post"}
+              .control-group
+                %label.control-label{:for => challenge[:id]} Select Winner
+                .controls
+                  %select{:id => 'winner', :name => 'winner'}
+                    %option{:value => challenge[:challenger_uid]}= challenge[:challenger_uid]
+                    %option{:value => challenge[:defender_uid]}= challenge[:defender_uid]
+                    %option{:value => 0} Draw
+                  %button.btn.btn-primary{:type => "submit"} Submit
