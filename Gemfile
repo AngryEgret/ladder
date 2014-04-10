@@ -33,7 +33,6 @@ group :development do
 end
 
 group :test do
-  gem 'simplecov'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner' # may need version 1.0.0.RC1
   gem 'poltergeist'
