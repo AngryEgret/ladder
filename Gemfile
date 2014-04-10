@@ -34,6 +34,7 @@ end
 
 group :test do
   gem 'cucumber-rails', :require => false
+  gem 'rspec-rails'
   gem 'database_cleaner' # may need version 1.0.0.RC1
   gem 'poltergeist'
   gem 'capybara'
