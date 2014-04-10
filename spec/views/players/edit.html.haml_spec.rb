@@ -5,10 +5,10 @@ describe "players/edit" do
     @player = assign(:player, stub_model(Player,
       :name => "MyString",
       :twitter_id => "MyString",
-      :rating => "",
-      :wins => "",
-      :losses => "",
-      :ties => ""
+      :rating => 1,
+      :wins => 1,
+      :losses => 1,
+      :ties => 1
     ))
   end
 

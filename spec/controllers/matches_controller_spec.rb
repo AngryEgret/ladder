@@ -23,7 +23,7 @@ describe MatchesController do
   # This should return the minimal set of attributes required to create a valid
   # Match. As you add validations to Match, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "challenger_id" => "" } }
+  let(:valid_attributes) { { "challenger_id" => "1" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -106,8 +106,8 @@ describe MatchesController do
         # specifies that the Match created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Match.any_instance.should_receive(:update).with({ "challenger_id" => "" })
-        put :update, {:id => match.to_param, :match => { "challenger_id" => "" }}, valid_session
+        Match.any_instance.should_receive(:update).with({ "challenger_id" => "1" })
+        put :update, {:id => match.to_param, :match => { "challenger_id" => "1" }}, valid_session
       end
 
       it "assigns the requested match as @match" do

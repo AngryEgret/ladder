@@ -3,11 +3,11 @@ require 'spec_helper'
 describe "matches/edit" do
   before(:each) do
     @match = assign(:match, stub_model(Match,
-      :challenger_id => "",
-      :defender_id => "",
-      :challenger_rating => "",
-      :defender_rating => "",
-      :winner_id => ""
+      :challenger_id => 1,
+      :defender_id => 1,
+      :challenger_rating => 1,
+      :defender_rating => 1,
+      :winner_id => 1
     ))
   end
 

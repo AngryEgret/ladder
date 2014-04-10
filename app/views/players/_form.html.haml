@@ -14,15 +14,15 @@
     = f.text_field :twitter_id
   .field
     = f.label :rating
-    = f.text_field :rating
+    = f.number_field :rating
   .field
     = f.label :wins
-    = f.text_field :wins
+    = f.number_field :wins
   .field
     = f.label :losses
-    = f.text_field :losses
+    = f.number_field :losses
   .field
     = f.label :ties
-    = f.text_field :ties
+    = f.number_field :ties
   .actions
     = f.submit 'Save'

@@ -8,18 +8,18 @@
 
   .field
     = f.label :challenger_id
-    = f.text_field :challenger_id
+    = f.number_field :challenger_id
   .field
     = f.label :defender_id
-    = f.text_field :defender_id
+    = f.number_field :defender_id
   .field
     = f.label :challenger_rating
-    = f.text_field :challenger_rating
+    = f.number_field :challenger_rating
   .field
     = f.label :defender_rating
-    = f.text_field :defender_rating
+    = f.number_field :defender_rating
   .field
     = f.label :winner_id
-    = f.text_field :winner_id
+    = f.number_field :winner_id
   .actions
     = f.submit 'Save'

@@ -3,11 +3,11 @@ require 'spec_helper'
 describe "matches/new" do
   before(:each) do
     assign(:match, stub_model(Match,
-      :challenger_id => "",
-      :defender_id => "",
-      :challenger_rating => "",
-      :defender_rating => "",
-      :winner_id => ""
+      :challenger_id => 1,
+      :defender_id => 1,
+      :challenger_rating => 1,
+      :defender_rating => 1,
+      :winner_id => 1
     ).as_new_record)
   end
 
