@@ -1,0 +1,25 @@
+= form_for @match do |f|
+  - if @match.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@match.errors.count, "error")} prohibited this match from being saved:"
+      %ul
+        - @match.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :challenger_id
+    = f.text_field :challenger_id
+  .field
+    = f.label :defender_id
+    = f.text_field :defender_id
+  .field
+    = f.label :challenger_rating
+    = f.text_field :challenger_rating
+  .field
+    = f.label :defender_rating
+    = f.text_field :defender_rating
+  .field
+    = f.label :winner_id
+    = f.text_field :winner_id
+  .actions
+    = f.submit 'Save'

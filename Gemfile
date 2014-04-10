@@ -14,7 +14,6 @@ gem 'bootstrap-sass'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'elo'
-gem 'trueskill', :git => 'git://github.com/saulabs/trueskill.git', :require => "saulabs/trueskill"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

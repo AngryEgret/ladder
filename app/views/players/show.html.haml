@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @player.name
+%p
+  %b Twitter:
+  = @player.twitter_id
+%p
+  %b Rating:
+  = @player.rating
+%p
+  %b Wins:
+  = @player.wins
+%p
+  %b Losses:
+  = @player.losses
+%p
+  %b Ties:
+  = @player.ties
+
+= link_to 'Edit', edit_player_path(@player)
+\|
+= link_to 'Back', players_path

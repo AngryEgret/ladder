@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Challenger:
+  = @match.challenger_id
+%p
+  %b Defender:
+  = @match.defender_id
+%p
+  %b Challenger rating:
+  = @match.challenger_rating
+%p
+  %b Defender rating:
+  = @match.defender_rating
+%p
+  %b Winner:
+  = @match.winner_id
+
+= link_to 'Edit', edit_match_path(@match)
+\|
+= link_to 'Back', matches_path
