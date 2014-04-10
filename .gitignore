@@ -14,6 +14,7 @@ test/version_tmp
 tmp
 db/
 log/
+coverage/
 
 # YARD artifacts
 .yardoc
