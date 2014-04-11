@@ -22,4 +22,11 @@ describe Match do
     expect(match.challenger_id).to eq player_one.id
     expect(match.defender_id).to eq player_two.id
   end
+
+  it 'belongs to a game' do
+    game = Game.create
+    match = game.matches.create
+
+    expect(match.kind_of? Match).to be true
+  end
 end

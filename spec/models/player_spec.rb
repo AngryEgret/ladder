@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe Player do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'has many matches' do
+    player = Player.create
+
+    3.times { player.matches.create }
+
+    expect(player.matches.count).to eq 3
+  end
 end
