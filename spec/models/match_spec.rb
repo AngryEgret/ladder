@@ -5,7 +5,8 @@ describe Match do
     player_one = Player.create(name:'player1')
     match = player_one.matches.create
 
-    expect(challenger_match.challenger_id).to eq player_one.id
+    expect(match.challenger_id).to eq player_one.id
+    expect(match.defender_id).to eq nil
   end
 
   it 'correctly associates the defender' do
