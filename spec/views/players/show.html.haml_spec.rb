@@ -5,10 +5,9 @@ describe "players/show" do
     @player = assign(:player, stub_model(Player,
       :name => "Name",
       :twitter_id => "Twitter",
-      :rating => 1,
-      :wins => 2,
-      :losses => 3,
-      :ties => 4
+      :wins => 1,
+      :losses => 2,
+      :ties => 3
     ))
   end
 
@@ -20,6 +19,5 @@ describe "players/show" do
     rendered.should match(/1/)
     rendered.should match(/2/)
     rendered.should match(/3/)
-    rendered.should match(/4/)
   end
 end

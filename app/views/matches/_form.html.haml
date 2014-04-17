@@ -7,19 +7,16 @@
           %li= msg
 
   .field
-    = f.label :challenger_id
-    = f.number_field :challenger_id
+    = f.label :rating
+    = f.number_field :rating
   .field
-    = f.label :defender_id
-    = f.number_field :defender_id
+    = f.label :result
+    = f.text_field :result
   .field
-    = f.label :challenger_rating
-    = f.number_field :challenger_rating
+    = f.label :opponent_id
+    = f.number_field :opponent_id
   .field
-    = f.label :defender_rating
-    = f.number_field :defender_rating
-  .field
-    = f.label :winner_id
-    = f.number_field :winner_id
+    = f.label :player_id
+    = f.number_field :player_id
   .actions
     = f.submit 'Save'

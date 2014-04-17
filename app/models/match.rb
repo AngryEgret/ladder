@@ -1,5 +1,5 @@
 class Match < ActiveRecord::Base
-  belongs_to :challenger, class_name: "Player", foreign_key: "challenger_id"
-  belongs_to :defender,   class_name: "Player", foreign_key: "defender_id"
-  belongs_to :game
+  has_one :opponent, class_name: "Match", foreign_key: :opponent_id
+  belongs_to :match, class_name: "Match", foreign_key: :opponent_id
+  belongs_to :player
 end

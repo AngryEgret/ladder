@@ -3,7 +3,6 @@ class CreatePlayers < ActiveRecord::Migration
     create_table :players do |t|
       t.string :name
       t.string :twitter_id
-      t.integer :rating
       t.integer :wins
       t.integer :losses
       t.integer :ties

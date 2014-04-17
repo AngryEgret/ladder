@@ -1,10 +1,11 @@
 require 'spec_helper'
 
 describe Game do
-  it 'has many matches' do
-    game = Game.create
-    3.times { game.matches.create }
+  it { should respond_to(:name) }
 
-    expect(game.matches.count).to eq 3
+  let(:game) { FactoryGirl.create(:game) }
+
+  describe 'has_many players' do
+    specify { game.should respond_to(:players) }
   end
 end

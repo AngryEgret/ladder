@@ -2,22 +2,20 @@
 
 %table
   %tr
-    %th Challenger
-    %th Defender
-    %th Challenger rating
-    %th Defender rating
-    %th Winner
+    %th Rating
+    %th Result
+    %th Opponent
+    %th Player
     %th
     %th
     %th
 
   - @matches.each do |match|
     %tr
-      %td= match.challenger_id
-      %td= match.defender_id
-      %td= match.challenger_rating
-      %td= match.defender_rating
-      %td= match.winner_id
+      %td= match.rating
+      %td= match.result
+      %td= match.opponent_id
+      %td= match.player_id
       %td= link_to 'Show', match
       %td= link_to 'Edit', edit_match_path(match)
       %td= link_to 'Destroy', match, :method => :delete, :data => { :confirm => 'Are you sure?' }

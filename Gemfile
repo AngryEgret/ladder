@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'rspec-rails'
 
 gem 'haml-rails'
 gem 'bootstrap-sass'
@@ -26,15 +27,14 @@ group :development do
   gem 'debugger'
   gem 'annotate'
   gem 'pry'
-  gem 'rspec-rails'
   gem 'awesome_print'
   gem 'json_spec'
   gem 'faker'
+  gem 'rails-erd'
 end
 
 group :test do
   gem 'cucumber-rails', :require => false
-  gem 'rspec-rails'
   gem 'database_cleaner' # may need version 1.0.0.RC1
   gem 'poltergeist'
   gem 'capybara'
