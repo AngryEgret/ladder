@@ -14,6 +14,8 @@ gem 'haml-rails'
 #gem 'bootstrap-sass'
 #gem 'will_paginate'
 #gem 'bootstrap-will_paginate'
+gem 'devise'
+gem 'omniauth-twitter'
 gem 'twitter'
 
 group :doc do

@@ -3,6 +3,14 @@ require "spec_helper"
 describe PlayersController do
   describe "routing" do
 
+    it "logs in a player" do
+      get("/players/sign_in").should route_to("devise/sessions#new")
+    end
+
+    it "logs out a player" do
+      delete("/players/sign_out").should route_to("devise/sessions#destroy")
+    end
+
     it "routes to #index" do
       get("/players").should route_to("players#index")
     end
@@ -19,9 +27,6 @@ describe PlayersController do
       get("/players/1/edit").should route_to("players#edit", :id => "1")
     end
 
-    it "routes to #create" do
-      post("/players").should route_to("players#create")
-    end
 
     it "routes to #update" do
       put("/players/1").should route_to("players#update", :id => "1")

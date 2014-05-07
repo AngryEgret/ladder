@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :player do
     name      'regret'
+    email     'regret@email.com'
+    password  'very_secret'
   end
 
   factory :player_with_games,  parent: :player do

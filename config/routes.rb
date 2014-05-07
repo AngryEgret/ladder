@@ -1,4 +1,5 @@
 Ladder::Application.routes.draw do
+  devise_for :players
   resources :matches
 
   resources :players

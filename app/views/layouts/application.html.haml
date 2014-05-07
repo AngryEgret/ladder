@@ -40,4 +40,10 @@
             %a{href: "#"} Log In
           %li
             %a{href: "#"} Sign Up
-    = yield
+      .container-fluid
+        .row-fluid
+          .span10
+            - flash.each do |key, value|
+              %div{class: "flash #{key} alert"}
+                = value
+            =yield

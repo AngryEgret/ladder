@@ -23,7 +23,10 @@ describe PlayersController do
   # This should return the minimal set of attributes required to create a valid
   # Player. As you add validations to Player, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "name" => "MyString" } }
+  let(:valid_attributes) { { 
+    "name"      => "MyString",
+    "email"     => "My@Email.com",
+    "password"  => "MyPassword" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -63,21 +66,9 @@ describe PlayersController do
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Player" do
-        expect {
-          post :create, {:player => valid_attributes}, valid_session
-        }.to change(Player, :count).by(1)
-      end
-
       it "assigns a newly created player as @player" do
         post :create, {:player => valid_attributes}, valid_session
         assigns(:player).should be_a(Player)
-        assigns(:player).should be_persisted
-      end
-
-      it "redirects to the created player" do
-        post :create, {:player => valid_attributes}, valid_session
-        response.should redirect_to(Player.last)
       end
     end
 
