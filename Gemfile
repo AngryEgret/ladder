@@ -11,9 +11,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'rspec-rails'
 
 gem 'haml-rails'
-gem 'bootstrap-sass'
-gem 'will_paginate'
-gem 'bootstrap-will_paginate'
+#gem 'bootstrap-sass'
+#gem 'will_paginate'
+#gem 'bootstrap-will_paginate'
 gem 'twitter'
 
 group :doc do

@@ -1,0 +1,43 @@
+!!!
+%html
+  %head
+    %title Ladder
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-inverse
+      .navbar-header
+        %button.navbar-toggle{"data-target" => ".navbar-inverse-collapse", "data-toggle" => "collapse", type: "button"}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{href: "#"} Ladder
+      .navbar-collapse.collapse.navbar-inverse-collapse
+        %ul.nav.navbar-nav
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              Games
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                %a{href: "#"} Street Fighter 4
+              %li
+                %a{href: "#"} King of Fighters '13
+              %li
+                %a{href: "#"} Chess
+              %li.divider
+              %li
+                %a{href: "#"} New Game
+          %li
+            %a{href: "#"} Ladder
+          %li
+            %a{href: "#"} My Stats
+          %li
+            %a{href: "#"} Rules
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %a{href: "#"} Log In
+          %li
+            %a{href: "#"} Sign Up
+    = yield

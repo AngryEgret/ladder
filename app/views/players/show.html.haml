@@ -1,20 +1,23 @@
-%p#notice= notice
+.panel.panel-default
+  .panel-heading regret
+  .panel-body
+    %p
+      %b Name:
+      = @player.name
+    %p
+      %b Twitter:
+      = @player.twitter_id
+    %p
+      %b Wins:
+      = @player.wins
+    %p
+      %b Losses:
+      = @player.losses
+    %p
+      %b Ties:
+      = @player.ties
 
-%p
-  %b Name:
-  = @player.name
-%p
-  %b Twitter:
-  = @player.twitter_id
-%p
-  %b Wins:
-  = @player.wins
-%p
-  %b Losses:
-  = @player.losses
-%p
-  %b Ties:
-  = @player.ties
+%p#notice= notice
 
 = link_to 'Edit', edit_player_path(@player)
 \|
